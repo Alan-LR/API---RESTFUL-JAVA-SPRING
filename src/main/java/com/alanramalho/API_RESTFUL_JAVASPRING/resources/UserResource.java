@@ -1,7 +1,5 @@
 package com.alanramalho.API_RESTFUL_JAVASPRING.resources;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +26,5 @@ public class UserResource {
         return ResponseEntity.ok().body(list1);
 
     }
+
 }
