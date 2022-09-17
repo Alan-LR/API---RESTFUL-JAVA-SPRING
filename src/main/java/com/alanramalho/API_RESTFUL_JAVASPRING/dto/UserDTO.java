@@ -1,6 +1,7 @@
 package com.alanramalho.API_RESTFUL_JAVASPRING.dto;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import com.alanramalho.API_RESTFUL_JAVASPRING.domain.User;
 
@@ -19,6 +20,13 @@ public class UserDTO implements Serializable {
         id = obj.getId();
         name = obj.getName();
         email = obj.getEmail();
+        senha = "******";
+    }
+
+    public UserDTO(Optional<User> obj) {
+        id = obj.get().getId();
+        name = obj.get().getName();
+        email = obj.get().getEmail();
         senha = "******";
     }
 
