@@ -1,6 +1,5 @@
 package com.alanramalho.API_RESTFUL_JAVASPRING.resources;
 
-import java.net.URLDecoder;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +28,7 @@ public class PostResource {
         return ResponseEntity.ok().body(obj);
     }
 
-    // Consulta simples com query methods, retornando post a partir de um texto
-    // passado na pesquisa
+    // Buscar posts contendo um dado string no título
     @GetMapping("/titlesearch")
     public ResponseEntity<List<Post>> findByTitle(@RequestParam(value = "text", defaultValue = "") String text) {
         text = URL.decodeParam(text);
