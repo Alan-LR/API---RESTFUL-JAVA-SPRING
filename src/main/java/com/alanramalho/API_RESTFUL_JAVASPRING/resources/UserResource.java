@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.alanramalho.API_RESTFUL_JAVASPRING.domain.Post;
 import com.alanramalho.API_RESTFUL_JAVASPRING.domain.User;
 import com.alanramalho.API_RESTFUL_JAVASPRING.dto.UserDTO;
 import com.alanramalho.API_RESTFUL_JAVASPRING.services.UserService;
@@ -51,6 +52,13 @@ public class UserResource {
     public ResponseEntity<UserDTO> findById(@PathVariable String id) {
         User obj = userService.findById(id);
         return ResponseEntity.ok().body(new UserDTO(obj));
+    }
+
+    // Pegar posts de um usuário com o ID do usuário
+    @GetMapping("/posts/{id}")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User obj = userService.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
     }
 
     @PostMapping

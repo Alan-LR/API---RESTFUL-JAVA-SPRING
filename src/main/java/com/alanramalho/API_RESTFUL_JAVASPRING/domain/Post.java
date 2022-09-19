@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.alanramalho.API_RESTFUL_JAVASPRING.dto.AuthorDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Document
 public class Post implements Serializable {
